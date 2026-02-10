@@ -2,4 +2,11 @@
   <Folder Name="/Solution Items/">
     <File Path="README.md" />
   </Folder>
+  <Project Path="AirportApi/AirportApi.csproj" Id="99f177b3-01d3-4e38-be01-e6e111d8d61d" />
+  <Project Path="AirportConsumer/AirportConsumer.csproj" Id="319d6cb4-ab0e-4618-86bc-4263abd85266" />
+  <Project Path="Models/Models.csproj" Id="86d38a1f-4660-435c-a73e-31e1f9d30560" />
+  <Project Path="Recieve/Recieve.csproj" Id="e10afbe8-9fee-4c39-8913-fe51d642b194" />
+  <Project Path="Send/Send.csproj" Id="9a717296-c0c7-414a-bc1b-7a05f19857eb" />
+  <Project Path="TaskProducer/TaskProducer.csproj" Id="f4815b48-de30-4792-9543-59c4533d9aca" />
+  <Project Path="TaskWorker/TaskWorker.csproj" Id="330495f2-51ab-4574-947f-d333fa242515" />
 </Solution>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TaskProducer": {
+      "commandName": "Project",
+      "commandLineArgs": "MegetLang.........."
+    }
+  }
+}

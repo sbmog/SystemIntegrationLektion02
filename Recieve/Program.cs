@@ -16,7 +16,6 @@ consumer.ReceivedAsync += (model, ea) =>
     var body = ea.Body.ToArray();
     var jsonString = Encoding.UTF8.GetString(body);
 
-    // Deserialiser tilbage til Person-objekt
     var person = JsonSerializer.Deserialize<Person>(jsonString);
 
     Console.WriteLine($" [x] Modtaget Person:");

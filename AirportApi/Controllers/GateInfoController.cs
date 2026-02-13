@@ -20,19 +20,16 @@ public class GateInfoController : ControllerBase
     {
         _logger.LogInformation($"Modtog forespørgsel for {airline} på gate {gateNumber}");
 
-        // 1. Opret GateInfo objekt
         var info = new GateInfo
         {
             GateNumber = gateNumber,
             FlightNumber = $"{airline}123"
         };
 
-        // 2. Send til RabbitMQ (Samme logik som før)
         var factory = new ConnectionFactory { HostName = "localhost" };
         using var connection = await factory.CreateConnectionAsync();
         using var channel = await connection.CreateChannelAsync();
 
-        // Brug airline navnet som kø-navn (f.eks. "SAS")
         string queueName = airline.ToString().ToLower();
         await channel.QueueDeclareAsync(queue: queueName, durable: false, exclusive: false, autoDelete: false);
 

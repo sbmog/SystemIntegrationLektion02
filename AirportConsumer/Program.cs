@@ -16,7 +16,6 @@ var factory = new ConnectionFactory { HostName = "localhost" };
 using var connection = await factory.CreateConnectionAsync();
 using var channel = await connection.CreateChannelAsync();
 
-// Vi deklarerer køen igen for at være sikre på den findes
 await channel.QueueDeclareAsync(queue: queueName, durable: false, exclusive: false, autoDelete: false);
 
 Console.WriteLine($" [*] Lytter på køen: {queueName}. Tryk [enter] for at stoppe.");
@@ -27,7 +26,6 @@ consumer.ReceivedAsync += (model, ea) =>
     var body = ea.Body.ToArray();
     var jsonString = Encoding.UTF8.GetString(body);
 
-    // Deserialiser JSON til GateInfo objekt
     var info = JsonSerializer.Deserialize<GateInfo>(jsonString);
 
     Console.WriteLine($" [x] MODTAGET GATE INFO:");
